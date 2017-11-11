@@ -1,2 +1,0 @@
-# atelierozaazul
-atelierozaazul
