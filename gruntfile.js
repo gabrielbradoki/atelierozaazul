@@ -1,4 +1,5 @@
 module.exports = function(grunt) {
+    require('jit-grunt')(grunt);
 
     grunt.initConfig({
         imagemin: {
@@ -23,6 +24,15 @@ module.exports = function(grunt) {
             }
         },
 
+        less: {
+            development: {
+                files: {
+                    'src/css/all.css': ['src/**/*.less'],
+                    'assets/css/all.css': ['src/**/*.less'],
+                }
+            }
+        },
+
         cssmin: {
             target: {
                 files: [{
@@ -35,23 +45,9 @@ module.exports = function(grunt) {
             }
         },
 
-        less: {
-            development: {
-                options: {
-                    compress: true,
-                    yuicompress: true,
-                    optimization: 2
-                },
-                files: {
-                    'assets/css/all.css': ['src/**/*.less']
-                }
-            }
-        },
-
         watch: {
             styles: {
-                files: ['src/**/*.less'], // which files to watch
-                tasks: ['less'],
+                tasks: ['imagemin', 'uglify', 'less', 'cssmin'],
                 options: {
                     nospawn: true
                 }
@@ -66,6 +62,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('jit-grunt');
 
-    grunt.registerTask('default', ['imagemin', 'uglify', 'cssmin', 'less', 'watch']);
+    grunt.registerTask('default', ['watch']);
 
 };
