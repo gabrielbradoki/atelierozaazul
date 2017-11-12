@@ -1,5 +1,5 @@
 module.exports = function(grunt) {
-    require('jit-grunt')(grunt);
+    //require('jit-grunt')(grunt);
 
     grunt.initConfig({
         imagemin: {
@@ -48,7 +48,7 @@ module.exports = function(grunt) {
         watch: {
             styles: {
                 files: ['src/**/*.less'], // which files to watch
-                tasks: ['imagemin', 'uglify', 'less', 'cssmin'],
+                tasks: ['uglify', 'less', 'cssmin'],
                 options: {
                     nospawn: true
                 }
@@ -61,8 +61,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('jit-grunt');
+    //grunt.loadNpmTasks('jit-grunt');
 
     grunt.registerTask('default', ['watch']);
-
+    grunt.registerTask('imagemin', ['imagemin']);
 };
