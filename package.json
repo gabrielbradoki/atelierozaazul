@@ -12,6 +12,7 @@
     "grunt-contrib-less": "^1.4.1",
     "grunt-contrib-uglify": "^3.1.0",
     "grunt-contrib-watch": "^1.0.0",
+    "grunt-less-import-options": "^0.1.7",
     "jit-grunt": "^0.10.0"
   },
   "scripts": {

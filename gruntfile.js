@@ -17,9 +17,11 @@ module.exports = function(grunt) {
             my_target: {
                 files: [{
                     expand: true,
-                    cwd: 'src/js',
-                    src: '**/*.js',
-                    dest: 'assets/js'
+                    cwd: 'assets/js',
+                    src: ['*.js', '!*.min.js'],
+                    dest: 'assets/js',
+                    ext: '.min.js',
+                    extDot: 'first'
                 }]
             }
         },
@@ -27,8 +29,7 @@ module.exports = function(grunt) {
         less: {
             development: {
                 files: {
-                    'src/css/all.css': ['src/**/*.less'],
-                    'assets/css/all.css': ['src/**/*.less'],
+                    'assets/css/all.css': ['src/**/*.less']
                 }
             }
         },
@@ -54,6 +55,7 @@ module.exports = function(grunt) {
                 }
             }
         }
+
     });
 
     grunt.loadNpmTasks('grunt-contrib-imagemin');
