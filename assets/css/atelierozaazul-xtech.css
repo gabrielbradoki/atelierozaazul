@@ -36,10 +36,6 @@ a:hover {
     width: 100%;
 }
 
-.personal-style #main-banners {
-    margin: 20px;
-}
-
 .box {
     background: #fff;
     box-shadow: 0 0 5px #888888;
@@ -233,7 +229,7 @@ img.block-header {
 
 #store-content .btn-primary {
     background: #000;
-    border-radius: 0;
+    border-radius: 5px;
     border: none;
     transition: background .2s;
 }
@@ -324,9 +320,9 @@ img.block-header {
 
 .personal-style #flash .alert {
     border: 1px solid #000;
-    background-color: #2876ff;
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+    background-color: #f8931f;
     color: #fff;
+    border-radius: 5px;
 }
 
 
@@ -492,14 +488,14 @@ img.block-header {
 /* Topo */
 
 .personal-style #topbar {
-    border-top: 6px solid #000;
+    border-top: 2px solid #000;
     background-color: #2876ff;
 }
 
 .personal-style #topbar .list-inline {
     border-top: none;
     margin-bottom: 0;
-    padding: 12px 0;
+    padding: 7px 0;
     background-color: #2876ff;
 }
 
@@ -542,8 +538,8 @@ img.block-header {
 
 .personal-style #top-search .input-group {
     border: 1px solid #e4e4e4;
+    border-radius: 5px;
     display: inline-table;
-    margin-right: 5px;
     width: 500px;
 }
 
@@ -755,11 +751,11 @@ header .logo {
 
 .col-xs-4 .logo {
     max-width: 100%;
+    width: 30%;
 }
 
 .personal-style #menu {
     border: none;
-    padding: 15px 0 0 0;
 }
 
 .personal-style #menu .navbar {
@@ -775,7 +771,6 @@ header .logo {
     float: none;
     letter-spacing: -4px;
     text-align: center;
-    background: #2875ff;
     border-radius: 5px;
 }
 
@@ -783,6 +778,13 @@ header .logo {
     display: inline-block;
     float: none;
     letter-spacing: normal;
+    position: static;
+}
+
+.personal-style #menu .navbar-nav>li.dropdown.open {
+    background: #599eff;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 .personal-style #menu .navbar-nav>li:hover {
@@ -793,13 +795,13 @@ header .logo {
 #menu .navbar-nav>li.open a:hover,
 #menu .navbar-nav>li.open a:focus {
     background: none;
+    color: #fff !important;
 }
 
 #menu .navbar-nav>li a h2 {
     font-size: 14px;
     display: inline-block;
     margin: 0;
-    color: #fff;
 }
 
 .personal-style #menu .navbar-nav>li a {
@@ -810,49 +812,38 @@ header .logo {
     text-align: center;
 }
 
-.personal-style #menu .navbar-nav>li a .caret {
-    border-bottom-color: #fff;
-    border-top-color: #fff;
-}
-
-.personal-style #menu .navbar-nav>li a:hover .caret {
-    border-bottom-color: #fff;
-    border-top-color: #fff;
+.personal-style #menu .navbar-nav>li a:hover {
+    background: #599eff;
+    color: #fff;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 .personal-style #menu .navbar-nav .dropdown-menu {
     background: #5a9eff;
-    border: none;
-    border-radius: 0;
     box-shadow: none;
-    left: -55px;
-    top: 54px;
-    min-width: 100%;
+    width: 100% !important;
     line-height: 1;
-    padding-bottom: 14px;
     border-radius: 5px;
+    border: none;
 }
 
-.personal-style #menu .navbar-nav .dropdown-menu:before {
-    content: "";
-    display: inline-block;
-    vertical-align: middle;
-    top: -18px;
-    position: relative;
-    width: 0;
-    height: 0;
-    border-left: 12px solid transparent;
-    border-right: 12px solid transparent;
-    border-bottom: 12px solid #5a9eff;
+.personal-style #menu .navbar-nav .dropdown-menu li {
+    display: block;
+    float: left;
 }
 
 .personal-style #menu .navbar-nav .dropdown-menu a {
     color: #fff;
     font-size: 14px;
     letter-spacing: 0;
-    padding: 8px 15px;
-    text-align: left;
+    display: inline-block;
+    margin: 10px;
     text-transform: uppercase;
+}
+
+.personal-style #menu .navbar-nav .dropdown-menu a:hover {
+    text-decoration: underline;
 }
 
 
@@ -1155,14 +1146,16 @@ header .logo {
 }
 
 #store-content .product-list-item {
-    margin-top: 20px;
-    margin-bottom: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 #store-content .product-list-item:hover {
     box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.75);
     -webkit-box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.75);
+    border-radius: 5px;
+    height: auto;
 }
 
 #store-content .out {
@@ -1255,6 +1248,7 @@ header .logo {
     display: block !important;
     background-color: #2877ff;
     cursor: pointer;
+    border-radius: 5px;
 }
 
 .personal-style #store-content .prod-wrapper .prod-action span {
@@ -1388,16 +1382,8 @@ header .logo {
     text-transform: uppercase;
 }
 
-.personal-style #store-content .prod-sub {
-    background: #f9f9f9;
-    border: 1px solid #bbbbbb;
-    padding: 5px 10px;
-}
-
-#store-content .prod-sub .prod-ref {
-    border-radius: 5px;
-    color: #888;
-    font-size: 12px;
+#store-content .prod-sub {
+    background: #fff !important;
 }
 
 #store-content .prod-sub .prod-secure {
@@ -1477,9 +1463,24 @@ header .logo {
 
 #store-content .prod-frete,
 #store-content #product .prod-variants {
-    background: #f9f9f9;
-    border: 1px solid #bbb;
+    background: #fff !important;
     padding: 10px;
+    padding-left: 0;
+}
+
+.frete #zip_code {
+    width: 350px;
+    height: 45px;
+    border-radius: 5px;
+}
+
+.frete span {
+    white-space: nowrap;
+    color: #fff;
+    position: absolute;
+    top: 7px;
+    right: 80px;
+    border-radius: 5px;
 }
 
 #store-content .frete_results {
@@ -1541,6 +1542,7 @@ header .logo {
     background: #f9f9f9;
     margin-top: 15px;
     padding: 15px;
+    border-radius: 5px;
     border: 1px solid #bbbbbb;
 }
 
@@ -1619,6 +1621,7 @@ header .logo {
     width: 100%;
     border: 2px solid #009018;
     background: #009018;
+    border-radius: 5px;
 }
 
 #product .buy-message {
@@ -1633,6 +1636,7 @@ header .logo {
 
 #product .prod-share {
     margin-top: 15px;
+    display: none;
 }
 
 #product .prod-description {
@@ -1645,6 +1649,7 @@ header .logo {
     border-bottom: 1px solid #e4e4e4;
     color: #999;
     padding: 15px;
+    border-radius: 0px 0px 10px 10px;
 }
 
 #product .prod-description .tab-content p {
@@ -1652,7 +1657,7 @@ header .logo {
 }
 
 #product .nav-tabs>li.active>a {
-    border-radius: 0;
+    border-radius: 10px 10px 0px 0px;
 }
 
 #product #size-table .nav-tabs>li:first-child.active>a {
@@ -1693,7 +1698,7 @@ header .logo {
 }
 
 #cartview #checkout_summary table thead {
-    background: #474747;
+    background: #2876ff;
     border: 1px solid transparent;
     color: #fff;
 }
@@ -1764,7 +1769,7 @@ header .logo {
 }
 
 #cartview .summary .cart-summary-bottom {
-    background: #474747;
+    background: #2876ff;
     padding: 7px 10px;
     margin: 0;
 }
@@ -2403,24 +2408,28 @@ footer .block .input-group {
 }
 
 footer .block input {
-    border-radius: 0;
+    border-radius: 5px !important;
     border-color: #e4e4e4;
     color: #666;
-    width: 150px;
+    height: 45px;
+    width: 300px !important;
 }
 
 footer .block input:hover,
 footer .block input:focus {
     box-shadow: none;
-    border-color: #999;
+    border-color: #000;
     outline: none;
 }
 
 .personal-style footer .block button {
     background: #000;
-    border-radius: 0;
     color: #fff;
     transition: background .2s;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    border-radius: 5px !important;
 }
 
 .personal-style footer .block button:hover {
@@ -2810,13 +2819,13 @@ footer .payments p {
     text-transform: uppercase;
     display: inline-block;
     width: 50%;
-    border-radius: 0;
+    border-radius: 5px;
 }
 
 .personal-style #ProdModal .btn-finalizar:hover {
     background-color: #009018;
     color: #fff;
-    border: 1px solid #000;
+    border: 2px solid #000;
 }
 
 #ProdModal .btn-contBuy {
@@ -2844,7 +2853,6 @@ footer .payments p {
     border-bottom: 1px solid #ccc;
     margin-bottom: 7px;
     letter-spacing: 0.5px;
-    background-color: #f4f4f4;
     padding: 5px 10px;
 }
 
@@ -3154,13 +3162,21 @@ footer .payments p {
 }
 
 #form-email .input-group>input {
-    width: 70%;
     display: inline-block;
+    position: relative;
+    height: 45px;
+    border-radius: 5px;
 }
 
 #form-email .input-group>button {
-    width: 29%;
     display: inline-block;
+    position: absolute;
+    right: 5px;
+    top: 7px;
+}
+
+#form-email .input-group>button:hover {
+    background: #000;
 }
 
 #form-email p {
@@ -3181,6 +3197,7 @@ footer .payments p {
     width: 30%;
     display: inline-block;
     margin: 0px 1.5%;
+    border-radius: 5px;
 }
 
 #cartview .page-header {
@@ -3200,10 +3217,12 @@ footer .payments p {
     text-transform: uppercase!important;
     letter-spacing: 2px!important;
     font-size: 14px!important;
+    border-radius: 5px;
 }
 
 #cartview .cart_finish:hover {
     color: #fff;
+    border: 2px solid #000;
 }
 
 #cartview .final_step h2 {
