@@ -1,3 +1,4 @@
+@import url('https://use.fontawesome.com/releases/v5.2.0/css/all.css');
 a {
     color: #666;
 }
@@ -14,6 +15,13 @@ a:hover {
 
 
 /* Geral */
+
+.no-gutter.col,
+.no-gutter.container,
+.no-gutter.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+}
 
 #size-table,
 #popup,
@@ -487,18 +495,6 @@ img.block-header {
 
 /* Topo */
 
-.personal-style #topbar {
-    border-top: 2px solid #000;
-    background-color: #2876ff;
-}
-
-.personal-style #topbar .list-inline {
-    border-top: none;
-    margin-bottom: 0;
-    padding: 7px 0;
-    background-color: #2876ff;
-}
-
 #topbar .list-inline ul {
     list-style: none;
     padding: 0;
@@ -534,13 +530,6 @@ img.block-header {
     font-size: 18px;
     top: 0;
     vertical-align: middle;
-}
-
-.personal-style #top-search .input-group {
-    border: 1px solid #e4e4e4;
-    border-radius: 5px;
-    display: inline-table;
-    width: 500px;
 }
 
 #top-search .input-group button {
@@ -813,14 +802,14 @@ header .logo {
 }
 
 .personal-style #menu .navbar-nav>li a:hover {
-    background: #599eff;
+    background: #2876ff;
     color: #fff;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
 
 .personal-style #menu .navbar-nav .dropdown-menu {
-    background: #5a9eff;
+    background: #2876ff;
     box-shadow: none;
     width: 100% !important;
     line-height: 1;
@@ -2308,11 +2297,82 @@ footer {
     border-bottom: 2px solid #000000;
 }
 
+.newsletter-area {
+    position: relative;
+    z-index: 1;
+    padding-bottom: 50px;
+    padding-top: 50px;
+}
+
+.newsletter-area:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: url('//gabrielbradoki.github.io/atelierozaazul/assets/img/bg-footer-newsletter.jpg') no-repeat center center;
+    opacity: .9;
+    background-size: cover;
+}
+
+.newsletter-area h4 {
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #fff !important;
+}
+
+.newsletter-area .input-group input {}
+
+.social {
+    text-align: center;
+    padding-top: 55px;
+}
+
+.social .social-icons {
+    display: inline-block;
+    background-color: #000;
+    border-radius: 25px;
+    color: #fff;
+    padding: 5px;
+    margin-right: 25px;
+    width: 50px;
+    height: 50px;
+}
+
+.social .social-icons:hover {
+    color: #fff;
+}
+
+.social .icon-facebook:before {
+    content: "\f09a";
+    font-family: "Font Awesome 5 Brands", "Font Awesome 5 Free";
+    display: block;
+    font-size: 30px;
+}
+
+.social .icon-instagram:before {
+    content: "\f16d";
+    font-family: "Font Awesome 5 Brands", "Font Awesome 5 Free";
+    display: block;
+    font-size: 30px;
+}
+
+.social .icon-youtube:before {
+    content: "\f167";
+    font-family: "Font Awesome 5 Brands", "Font Awesome 5 Free";
+    display: block;
+    font-size: 30px;
+}
+
 footer h4 {
     text-transform: uppercase;
     font-size: 14px;
     letter-spacing: 2px;
     padding-bottom: 15px;
+    color: #fff !important;
+    text-align: center;
 }
 
 footer .ebit {
@@ -2321,11 +2381,6 @@ footer .ebit {
 
 footer .links {
     padding-bottom: 20px;
-}
-
-footer .block:last-child {
-    padding-top: 20px;
-    border-bottom: none !important;
 }
 
 footer .config {
@@ -2372,6 +2427,7 @@ footer .links ul li {
 
 .personal-style footer .links ul li a {
     padding-left: 5px;
+    color: #fff;
 }
 
 .personal-style footer .links ul li a:hover {
@@ -2393,8 +2449,8 @@ footer .links ul li:before {
     color: #000;
 }
 
-.personal-style footer .block {
-    background-color: inherit;
+.personal-style footer .block.links {
+    background-color: #007bff;
 }
 
 footer .block .nw-title {
@@ -2573,22 +2629,6 @@ footer .payments p {
 
 .fb_widget {
     margin-top: 20px;
-}
-
-.social-icons {
-    color: #000;
-    display: inline-block;
-    margin-bottom: 10px;
-    font-size: 22px;
-    transition: color .2s;
-}
-
-.fa-pinterest {
-    display: none !important;
-}
-
-.social-icons:hover {
-    color: #666;
 }
 
 
