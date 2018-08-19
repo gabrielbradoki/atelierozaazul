@@ -1,14 +1,22 @@
 <ul class="list-inline">
-    {# BUSCA #}
-    {% if template_settings('layout:header') != 'hed_completo' %}
+    <li id="top-logo" class="{{ template_settings('layout:header') == 'hed_foco' ? '' : ''}}">
+        {{ homepage ? '
+        <h1 class="logo-base">':'
+            <div class="logo-base">' }}
+                <a href="{{ base_url() }}">
+                    <img class="logo" src="{{ logo_url() }}" alt="{{ shop_config('company_name') }}">
+                </a>
+                {{ homepage ? '</h1>':'</div>' }}
+    </li>
+    {# BUSCA #} {% if template_settings('layout:header') != 'hed_completo' %}
     <li id="top-search">
-        {# Busca #} 
-        {{ form_open('cart/search', {id: "form-search"}) }}
+        {# Busca #} {{ form_open('cart/search', {id: "form-search"}) }}
         <div class="input-group">
-            <input type="text" name="term" id="search-engine" class="form-control" placeholder="{{ lang('do_search') }}" autocomplete="off" />
+            <input type="text" name="term" id="search-engine" class="form-control" placeholder="{{ lang('do_search') }}" autocomplete="off"
+            />
             <span class="input-group-btn">
                 <button class="btn btn-default" type="button">
-                    <i class="glyphicon glyphicon-search"></i>
+                    <i class="fas fa-search"></i>
                 </button>
             </span>
         </div>
@@ -23,44 +31,43 @@
         </div>
         {{ form_close() }}
     </li>
-    <ul {{ template_settings('layout:header') != 'hed_completo' ? 'class="pull-right"' : '' }}>
-    {% endif %}
-        {% if template_settings('text:t_phone') != "" %}
+    <ul {{ template_settings( 'layout:header') !='hed_completo' ? 'class="topbar infos"' : '' }}>
+        {% endif %} {% if template_settings('text:t_phone') != "" %}
         <li>
             <a href="tel:{{ template_settings('text:t_phone') }}">
-                <i class="glyphicon glyphicon-earphone"></i>    {{ template_settings('text:t_phone') }}
+                <i class="fas fa-search"></i> {{ template_settings('text:t_phone') }}
             </a>
         </li>
-        {% endif %}
-        {% if template_settings('if:catalog') == 0 %}
-            <li>
-                <a href="{{ site_url('secure/my_account') }}">
-                    <i class="glyphicon glyphicon-user"></i>
-                    {{ lang('my_account') }}
-                </a>
-            </li>
-            <li>
-                {% if logged_in %}
-                <a href="{{ site_url('secure/logout') }}">
-                    <i class="glyphicon glyphicon-log-out"></i>
-                    {{ lang('logout') }}
-                </a>
-                {% else %}
-                <a href="{{ site_url('secure/login') }}">
-                    <i class="glyphicon glyphicon-log-in"></i>
-                    {{ lang('login') }}
-                </a>
-                {% endif %}
-            </li>
-            <li {{ template_settings('layout:header') == 'hed_completo' ? 'class="pull-right"' : '' }}>
-                <a href="{{ site_url('cart/view_cart') }}">
-                    <i class="glyphicon glyphicon-shopping-cart"></i>
-                    {{ lang('view_cart') }}: <span id="view_cartTotalItens">{{ cart('total_items') }}</span> {% if cart('total_items') == 1 %}item{% else %}{{ "itens"|trans({'en':'items'}) }}{% endif %} - <span id="view_cartTotalValue">{{ cart('total')|format_currency }}</span>
-                </a>
-            </li>
-        {% endif %}
-    {% if template_settings('layout:header') != 'hed_completo' %}
+        {% endif %} {% if template_settings('if:catalog') == 0 %}
+        <li>
+            <a href="{{ site_url('secure/my_account') }}">
+                <i class="fas fa-user-circle"></i>
+                {{ lang('my_account') }}
+            </a>
+        </li>
+        <li>
+            {% if logged_in %}
+            <a href="{{ site_url('secure/logout') }}">
+                <i class="fas fa-sign-out-alt"></i>
+                {{ lang('logout') }}
+            </a>
+            {% else %}
+            <a href="{{ site_url('secure/login') }}">
+                <i class="fas fa-sign-in-alt"></i>
+                {{ lang('login') }}
+            </a>
+            {% endif %}
+        </li>
+        <li {{ template_settings( 'layout:header')=='hed_completo' ? 'class="pull-right"' : '' }}>
+            <a href="{{ site_url('cart/view_cart') }}">
+                <i class="fas fa-shopping-bag"></i>
+                {{ lang('view_cart') }}:
+                <span id="view_cartTotalItens">{{ cart('total_items') }}</span> {% if cart('total_items') == 1 %}item{% else %}{{ "itens"|trans({'en':'items'})
+                }}{% endif %} -
+                <span id="view_cartTotalValue">{{ cart('total')|format_currency }}</span>
+            </a>
+        </li>
+        {% endif %} {% if template_settings('layout:header') != 'hed_completo' %}
     </ul>
-    {% endif %}
-{# MENU #}
+    {% endif %} {# MENU #}
 </ul>

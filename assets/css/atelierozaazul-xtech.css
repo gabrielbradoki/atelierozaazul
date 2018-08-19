@@ -480,41 +480,35 @@ img.block-header {
 
 /* Topo */
 
-#topbar .list-inline ul {
+#topbar .list-inline {
+    display: flex;
+    margin: 0;
+}
+
+#topbar .list-inline #top-search {
+    flex: 1;
+    width: 400px;
+}
+
+#topbar .list-inline #top-logo {
+    margin: 10px;
+}
+
+#topbar .list-inline .topbar.infos {
+    display: flex;
+    padding-top: 10px;
+}
+
+#topbar .list-inline .topbar.infos li {
+    text-align: center;
     list-style: none;
-    padding: 0;
+    margin-right: 15px;
 }
 
-#topbar .list-inline ul li {
-    display: inline-block;
-    margin-right: 10px;
-}
-
-#topbar .list-inline ul li:last-child {
-    margin-right: 0;
-}
-
-#topbar .list-inline li:first-child {
-    padding-left: 0;
-}
-
-#topbar .list-inline li:last-child {
-    padding-right: 0;
-}
-
-#topbar .list-inline i {
-    margin-right: 5px;
-}
-
-#topbar .list-inline i.glyphicon-shopping-cart {
-    background: #000;
-    color: #fff;
-    font-size: 11px;
-    margin-top: -4px;
-    padding: 7px;
-    font-size: 18px;
-    top: 0;
-    vertical-align: middle;
+#topbar .list-inline .topbar.infos li:last-child:before {
+    content: '';
+    border-left: 2px solid #11159a;
+    padding-right: 15px;
 }
 
 #top-search .input-group button {
@@ -547,8 +541,8 @@ img.block-header {
     border-radius: 0;
     box-shadow: none;
     color: #000;
-    font-size: 12px;
-    height: 25px;
+    font-size: 14px;
+    height: 40px;
     padding: 5px;
 }
 
@@ -705,28 +699,8 @@ img.block-header {
     text-decoration: none;
 }
 
-#topbar .container-fluid .navbar,
-#topbar .container-fluid .list-inline {
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
 
 /* Header & Menu */
-
-header .logo-base {
-    margin: 0;
-}
-
-header .logo {
-    padding-bottom: 25px;
-    padding-top: 25px;
-}
-
-.col-xs-4 .logo {
-    max-width: 100%;
-    width: 30%;
-}
 
 .personal-style #menu {
     border: none;
@@ -2581,6 +2555,8 @@ footer {
     color: #fff;
     width: 100px;
     font-size: 0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 .newsletter-area .input-group .btn-sub:before {

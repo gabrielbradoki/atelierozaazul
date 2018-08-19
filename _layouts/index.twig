@@ -182,9 +182,7 @@
         <section id="topbar">
             <div class="container{{ template_settings('if:force_topbar') and template_settings('if:force_content') ? '-fluid' : '' }}">
                 <div class="row">
-                    <div class="col">
                         {% include('top_navigation.html') %}
-                    </div>
                 </div>
             </div>
         </section>
@@ -200,7 +198,7 @@
                             />
                             <span class="input-group-btn">
                                 <button class="btn btn-default" type="button">
-                                    <i class="glyphicon glyphicon-search"></i>
+                                    <i class="fas fa-search"></i>
                                 </button>
                             </span>
                         </div>
@@ -226,7 +224,7 @@
                     </div>
                     <div {{ template_settings( 'layout:header')=='hed_completo' ? 'class="col-md-4 adjust pull-right text-right"' : '' }}>
                         <a href="{{ site_url('cart/view_cart') }}">
-                            <i class="glyphicon glyphicon-shopping-cart"></i>
+                            <i class="fas fa-shopping-bag"></i>
                             {{ lang('view_cart') }}:
                             <span id="view_cartTotalItens">{{ cart('total_items') }}</span>
                             {% if cart('total_items') == 1 %}item{% else %}{{ "itens"|trans({'en':'items'}) }} {% endif %} -
