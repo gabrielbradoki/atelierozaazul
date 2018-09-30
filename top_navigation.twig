@@ -32,12 +32,12 @@
         {{ form_close() }}
     </li>
     <ul {{ template_settings( 'layout:header') !='hed_completo' ? 'class="topbar infos"' : '' }}>
-        {% endif %} {% if template_settings('text:t_phone') != "" %}
+        <!-- {% endif %} {% if template_settings('text:t_phone') != "" %}
         <li>
             <a href="tel:{{ template_settings('text:t_phone') }}">
                 <i class="fas fa-search"></i> {{ template_settings('text:t_phone') }}
             </a>
-        </li>
+        </li> -->
         {% endif %} {% if template_settings('if:catalog') == 0 %}
         <li>
             <a href="{{ site_url('secure/my_account') }}">
